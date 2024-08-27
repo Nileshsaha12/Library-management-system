@@ -567,6 +567,55 @@ def get_cursor(self,event=""):
           self.lateratefine_var.set(row[15]),
           self.dateoverdue_var.set(row[16]),
           self.finalprice_var.set(row[17])
+
+def showData(self):
+          self.txtBox.insert(END,"Member Type:\t\t"+self.member_var.get() + "\n")
+          self.txtBox.insert(END,"PRN No:\t\t"+self.prn_var.get() + "\n")
+          self.txtBox.insert(END,"ID No:\t\t"+self.id_var.get() + "\n")
+          self.txtBox.insert(END,"FirstName:\t\t"+self.firstname_var.get() + "\n")
+          self.txtBox.insert(END,"LastName:\t\t"+self.lastname_var.get() + "\n")
+          self.txtBox.insert(END,"Address:\t\t"+self.address_var.get() + "\n")
+          self.txtBox.insert(END,"City:\t\t"+self.city_var.get() + "\n")
+          self.txtBox.insert(END,"Post Code:\t\t"+self.postcode_var.get() + "\n")
+          self.txtBox.insert(END,"Mobile No.:\t\t"+self.mobile_var.get() + "\n")
+          self.txtBox.insert(END,"Book ID:\t\t"+self.bookid_var.get() + "\n")
+          self.txtBox.insert(END,"Book Title:\t\t"+self.booktitle_var.get() + "\n")
+          self.txtBox.insert(END,"Auther:\t\t"+self.auther_var.get() + "\n")
+          self.txtBox.insert(END,"DateBorrowed:\t\t"+self.dateborrowed_var.get() + "\n")
+          self.txtBox.insert(END,"DateDue:\t\t"+self.datedue_var.get() + "\n")
+          self.txtBox.insert(END,"DaysOnBook:\t\t"+self.daysonbook_var.get() + "\n")
+          self.txtBox.insert(END,"LateRateFine:\t\t"+self.lateratefine_var.get() + "\n")
+          self.txtBox.insert(END,"DateOverDue:\t\t"+self.dateoverdue_var.get() + "\n")
+          self.txtBox.insert(END,"FinalPrice:\t\t"+self.finalprice_var.get() + "\n")
+    
+
+def reset(self):
+          self.member_var.set(""),
+          self.prn_var.set(""),
+          self.id_var.set(""),
+          self.firstname_var.set(""),
+          self.lastname_var.set(""),
+          self.address_var.set(""),
+          self.city_var.set(""),
+          self.postcode_var.set(""),
+          self.mobile_var.set(""),
+          self.bookid_var.set(""),
+          self.booktitle_var.set(""),
+          self.auther_var.set(""),
+          self.dateborrowed_var.set(""),
+          self.datedue_var.set(""),
+          self.daysonbook_var.set(""),
+          self.lateratefine_var.set(""),
+          self.dateoverdue_var.set(""),
+          self.finalprice_var.set(""),
+          self.txtBox.delete("1.0",END)
+
+
+def iExit(self):
+          iExit=tk.messagebox.askyesno("DO you want to exit")
+          if iExit>0:
+                self.root.destroy()
+                return
           
 if __name__ == "__main__":
     root=Tk()
