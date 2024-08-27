@@ -157,7 +157,202 @@ class LibraryManagementSystem:
                     'After the Software Wars','Free Software, Free Society','Patterns of Software',
                     'Innovation Happens Elsewhere']
         
+        def SelectBook(event=""):
+            index=listBox.curselection()
+            if index:
+                value=listBooks[index[0]]
+                x=value
+                if x==("The C++ Programming Language"):
+                        self.bookid_var.set("BKID5454")
+                        self.booktitle_var.set("C++ Programming")
+                        self.auther_var.set("Bjarne Stroustrup")
 
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 899")
+                elif x==("The Practice of Programming"):
+                        self.bookid_var.set("BKID8863")
+                        self.booktitle_var.set("The Practice of Programming")
+                        self.auther_var.set("Brian W. Kernighan, Rob Pike")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 450")
+                elif x==("The Art of Computer Programming"):
+                        self.bookid_var.set("BKID1223")
+                        self.booktitle_var.set("The Art of Computer Programming")
+                        self.auther_var.set("Donald Knuth")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 800")
+                elif x==("Close to the Machine"):
+                        self.bookid_var.set("BKID8775")
+                        self.booktitle_var.set("Close to the Machine")
+                        self.auther_var.set("Ellen Ullman")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 950")
+                elif x==("Fundamentals of Computer Algorithms"):
+                        self.bookid_var.set("BKID7776")
+                        self.booktitle_var.set("Fundamentals of Computer Algorithms")
+                        self.auther_var.set("Ellis Horowitz")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 555")
+                elif x==("The Art of Unix Programming"):
+                        self.bookid_var.set("BKID7419")
+                        self.booktitle_var.set("The Art of Unix Programming")
+                        self.auther_var.set("Eric Raymond")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 999")
+                elif x==("The Psychology of Computer Programming"):
+                        self.bookid_var.set("BKID2154")
+                        self.booktitle_var.set("The Psychology of Computer Programming")
+                        self.auther_var.set("Gerald M. Weinberg ")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 780")
+                elif x==("The Java Programming Language"):
+                        self.bookid_var.set("BKID5778")
+                        self.booktitle_var.set("The Java Programming Language")
+                        self.auther_var.set("James Gosling")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 499")
+                elif x==("The Best Software Writing I"):
+                        self.bookid_var.set("BKID7844")
+                        self.booktitle_var.set("The Best Software Writing I")
+                        self.auther_var.set("Joel Spolsky")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 550")
+                elif x==("After the Software Wars"):
+                        self.bookid_var.set("BKID9854")
+                        self.booktitle_var.set("After the Software Wars")
+                        self.auther_var.set("Keith Curtis")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 599")
+                elif x==("Free Software, Free Society"):
+                        self.bookid_var.set("BKID6352")
+                        self.booktitle_var.set("Free Software, Free Society")
+                        self.auther_var.set("Richard M. Stallman ")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 799")
+                elif x==("Patterns of Software"):
+                        self.bookid_var.set("BKID5959")
+                        self.booktitle_var.set("Patterns of Software")
+                        self.auther_var.set("Richard P. Gabriel ")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 850")
+                elif x==("Innovation Happens Elsewhere"):
+                        self.bookid_var.set("BKID7878")
+                        self.booktitle_var.set("Innovation Happens Elsewhere")
+                        self.auther_var.set("Richard P. Gabriel")
+
+                        d1=datetime.datetime.today()
+                        d2=datetime.timedelta(days=15)
+                        d3=d1+d2
+                        self.dateborrowed_var.set(d1)
+                        self.datedue_var.set(d3)
+                        self.daysonbook_var.set(15)
+                        self.lateratefine_var.set("Rs. 50")
+                        self.dateoverdue_var.set("NO")
+                        self.finalprice_var.set("Rs. 750")
+
+
+        listBox=Listbox(DataFrameRight,font=("arial",12,"bold"),width=20,height=16)
+        listBox.bind("<<ListboxSelect>>",SelectBook)
+        listBox.grid(row=0,column=0,padx=4)
+        listScrollbar.config(command=listBox.yview)
+
+        for item in listBooks:
+            listBox.insert(END,item)
 
 
 if __name__ == "__main__":
