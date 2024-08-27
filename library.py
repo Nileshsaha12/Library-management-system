@@ -442,6 +442,48 @@ class LibraryManagementSystem:
         self.library_table.column("dateoverdue",width=100)
         self.library_table.column("finalprice",width=100)
 
+        self.fatch_data()
+        self.library_table.bind("<ButtonRelease-1>",self.get_cursor)
+
+
+    def add_data(self):
+            try:
+                conn=cx_Oracle.connect('NILESH/nilesh@localhost:1521/xe')
+                cursor=conn.cursor()
+                cursor.execute("insert into LIBRARY_MEMBER_DETAILS values(:membertype, :prnno, :idno, :firstname, :lastname, :address, :city, :postcode, :mobile, :bookid, :booktitle, :auther, :dateborrowed, :datedue, :days, :latereturnfine, :dateoverdue, :finalprice)",( self.member_var.get(),
+                                                                                                                                   self.prn_var.get(),
+                                                                                                                                   self.id_var.get(),
+                                                                                                                                   self.firstname_var.get(),
+                                                                                                                                   self.lastname_var.get(),
+                                                                                                                                   self.address_var.get(),
+                                                                                                                                   self.city_var.get(),
+                                                                                                                                   self.postcode_var.get(),
+                                                                                                                                   self.mobile_var.get(),
+                                                                                                                                   self.bookid_var.get(),
+                                                                                                                                   self.booktitle_var.get(),
+                                                                                                                                   self.auther_var.get(),
+                                                                                                                                   self.dateborrowed_var.get(),
+                                                                                                                                   self.datedue_var.get(),
+                                                                                                                                   self.daysonbook_var.get(),
+                                                                                                                                   self.lateratefine_var.get(),
+                                                                                                                                   self.dateoverdue_var.get(),
+                                                                                                                                   self.finalprice_var.get()
+
+                    
+                                                                                                                                     ))
+                
+                conn.commit()
+                self.fatch_data()
+                messagebox.showinfo("success !!! Member has been inserted successfully ")
+
+            except cx_Oracle.DatabaseError as e:
+                print("Database error",e)
+
+            finally:
+                if cursor:
+                    cursor.close()
+                if conn:
+                    conn.close()
 
 
 
