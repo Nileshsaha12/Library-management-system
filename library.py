@@ -375,6 +375,73 @@ class LibraryManagementSystem:
         btnAddData=Button(Framebutton,command=self.iExit,text="Exit",font=("arial",12,"bold"),width=23,bg="blue",fg="white")
         btnAddData.grid(row=0,column=5)
 
+         # ---------------------------Information Frame------------------------------------
+        FrameDetails=Frame(self.root,bd=12,relief=RIDGE,padx=20,bg="powder blue")
+        FrameDetails.place(x=0,y=600,width=1530,height=195)
+
+
+        Table_frame=Frame(FrameDetails,bd=6,relief=RIDGE,bg="powder blue")
+        Table_frame.place(x=0,y=2,width=1460,height=170)
+
+
+        xscroll=ttk.Scrollbar(Table_frame,orient=HORIZONTAL)
+        yscroll=ttk.Scrollbar(Table_frame,orient=VERTICAL)
+
+        self.library_table=ttk.Treeview(Table_frame,columns=("membertype","prnno","idno","firstname","lastname","address",
+                                                             "city","postid","mobile","bookid","booktitle","auther","dateborrowed",
+                                                             "datedue","days","latereturnfine","dateoverdue","finalprice"),xscrollcommand=xscroll.set,yscrollcommand=yscroll.set)
+        
+
+        xscroll.pack(side=BOTTOM,fill=X)
+        yscroll.pack(side=RIGHT,fill=Y)
+
+        xscroll.config(command=self.library_table.xview)
+        yscroll.config(command=self.library_table.yview)
+        
+        self.library_table.heading("membertype",text="Member Type")
+        self.library_table.heading("prnno",text="PRN No")
+        self.library_table.heading("idno",text="ID No")
+        self.library_table.heading("firstname",text="First Name")
+        self.library_table.heading("lastname",text="Last Name")
+        self.library_table.heading("address",text="Address")
+        self.library_table.heading("city",text="City")
+        self.library_table.heading("postid",text="Post ID")
+        self.library_table.heading("mobile",text="Mobile Number")
+        self.library_table.heading("bookid",text="Book ID")
+        self.library_table.heading("booktitle",text="Book Title")
+        self.library_table.heading("auther",text="Auther")
+        self.library_table.heading("dateborrowed",text="Date of Borrowed")
+        self.library_table.heading("datedue",text="Date Due")
+        self.library_table.heading("days",text="Days on Book")
+        self.library_table.heading("latereturnfine",text="Late Return Fine")
+        self.library_table.heading("dateoverdue",text="Date OverDue")
+        self.library_table.heading("finalprice",text="Final Price")
+        
+
+
+        self.library_table["show"]="headings"
+        self.library_table.pack(fill=BOTH,expand=1)
+
+
+        self.library_table.column("membertype",width=100)
+        self.library_table.column("prnno",width=100)
+        self.library_table.column("idno",width=100)
+        self.library_table.column("firstname",width=100)
+        self.library_table.column("lastname",width=100)
+        self.library_table.column("address",width=100)
+        self.library_table.column("city",width=100)
+        self.library_table.column("postid",width=100)
+        self.library_table.column("mobile",width=100)
+        self.library_table.column("bookid",width=100)
+        self.library_table.column("booktitle",width=100)
+        self.library_table.column("auther",width=100)
+        self.library_table.column("dateborrowed",width=100)
+        self.library_table.column("datedue",width=100)
+        self.library_table.column("days",width=100)
+        self.library_table.column("latereturnfine",width=100)
+        self.library_table.column("dateoverdue",width=100)
+        self.library_table.column("finalprice",width=100)
+
 
 
 
