@@ -353,6 +353,29 @@ class LibraryManagementSystem:
 
         for item in listBooks:
             listBox.insert(END,item)
+               # ---------------------------Buttons Frame------------------------------------
+        Framebutton=Frame(self.root,bd=12,relief=RIDGE,padx=20,bg="powder blue")
+        Framebutton.place(x=0,y=530,width=1530,height=70)
+
+        btnAddData=Button(Framebutton,command=self.add_data,text="Add Data",font=("arial",12,"bold"),width=23,bg="blue",fg="white")
+        btnAddData.grid(row=0,column=0)
+
+        btnAddData=Button(Framebutton,command=self.showData,text="Show Data",font=("arial",12,"bold"),width=23,bg="blue",fg="white")
+        btnAddData.grid(row=0,column=1)
+
+        btnAddData=Button(Framebutton,command=self.update,text="Update",font=("arial",12,"bold"),width=23,bg="blue",fg="white")
+        btnAddData.grid(row=0,column=2)
+
+        btnAddData=Button(Framebutton,command=self.delete,text="Delete",font=("arial",12,"bold"),width=23,bg="blue",fg="white")
+        btnAddData.grid(row=0,column=3)
+
+        btnAddData=Button(Framebutton,command=self.reset,text="Reset",font=("arial",12,"bold"),width=23,bg="blue",fg="white")
+        btnAddData.grid(row=0,column=4)
+
+        btnAddData=Button(Framebutton,command=self.iExit,text="Exit",font=("arial",12,"bold"),width=23,bg="blue",fg="white")
+        btnAddData.grid(row=0,column=5)
+
+
 
 
 if __name__ == "__main__":
