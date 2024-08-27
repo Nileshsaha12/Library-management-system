@@ -446,7 +446,7 @@ class LibraryManagementSystem:
         self.library_table.bind("<ButtonRelease-1>",self.get_cursor)
 
 
-    def add_data(self):
+def add_data(self):
             try:
                 conn=cx_Oracle.connect('NILESH/nilesh@localhost:1521/xe')
                 cursor=conn.cursor()
@@ -484,6 +484,35 @@ class LibraryManagementSystem:
                     cursor.close()
                 if conn:
                     conn.close()
+def update(self):
+                conn=cx_Oracle.connect('NILESH/nilesh@localhost:1521/xe')
+                cursor=conn.cursor()
+                cursor.execute("update LIBRARY_MEMBER_DETAILS set MEMBER=:membertype, PRN_NO=:prnno, FIRSTNAME= :firstname, LASTNAME=:lastname, ADDRESS=:address, CITY=:city,POSTID= :postcode,MOBILE= :mobile, BOOK_ID=:bookid,BOOK_TITLE = :booktitle, AUTHER=:auther, DATEBORROWED=:dateborrowed, DUEDATE=:datedue, DAYS=:days, LATERETUENFINE=:latereturnfine, DATEOVERDUE=:dateoverdue, FINAL_PRICE=:finalprice where ID=:idno",(
+                      self.member_var.get(),
+                      self.prn_var.get(),
+                      self.firstname_var.get(),
+                      self.lastname_var.get(),
+                      self.address_var.get(),
+                      self.city_var.get(),
+                      self.postcode_var.get(),
+                      self.mobile_var.get(),
+                      self.bookid_var.get(),
+                      self.booktitle_var.get(),
+                      self.auther_var.get(),
+                      self.dateborrowed_var.get(),
+                      self.datedue_var.get(),
+                      self.daysonbook_var.get(),
+                      self.lateratefine_var.get(),
+                      self.dateoverdue_var.get(),
+                      self.finalprice_var.get(),
+                      self.id_var.get()
+                ))
+                conn.commit()
+                self.fatch_data()
+                self.reset()
+                conn.close()
+
+                messagebox.showinfo("Data Updated Sucessful !!!")
 
 
 
