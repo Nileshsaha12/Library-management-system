@@ -142,7 +142,21 @@ class LibraryManagementSystem:
        
 
         #----------------------------DataFrameRight----------------------------------
+        DataFrameRight=LabelFrame(frame,text="Book Details" ,bg="powder blue",fg="black",bd=12,relief=RIDGE,font=("arial",12,"bold"))
+        DataFrameRight.place(x=910,y=5,width=540,height=350)
 
+        self.txtBox=Text(DataFrameRight, font=("arial",12,"bold"),width=32,height=16,padx=2,pady=6)
+        self.txtBox.grid(row=0,column=2)
+
+        listScrollbar=Scrollbar(DataFrameRight)
+        listScrollbar.grid(row=0,column=1,sticky="ns")
+
+        listBooks=['The C++ Programming Language','The Practice of Programming','The Art of Computer Programming',
+                    'Close to the Machine','Fundamentals of Computer Algorithms','The Art of Unix Programming',
+                    'The Psychology of Computer Programming','The Java Programming Language','The Best Software Writing I',
+                    'After the Software Wars','Free Software, Free Society','Patterns of Software',
+                    'Innovation Happens Elsewhere']
+        
 
 
 
