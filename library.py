@@ -514,7 +514,22 @@ def update(self):
 
                 messagebox.showinfo("Data Updated Sucessful !!!")
 
+def delete(self):
+          if self.id_var.get()=="" :
+                messagebox.showerror("Error!! First select the member")
+          else:
+               conn=cx_Oracle.connect('NILESH/nilesh@localhost:1521/xe')
+               cursor=conn.cursor()
+               query="delete from LIBRARY_MEMBER_DETAILS where ID=:id_var"
+               value=(self.id_var.get(),)
+               cursor.execute (query,value)
 
+               conn.commit()
+               self.fatch_data()
+               self.reset()
+               conn.close()
+
+               messagebox.showinfo("Member deleted Successfully !!!")
 
 if __name__ == "__main__":
     root=Tk()
