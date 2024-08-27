@@ -446,7 +446,7 @@ class LibraryManagementSystem:
         self.library_table.bind("<ButtonRelease-1>",self.get_cursor)
 
 
-def add_data(self):
+    def add_data(self):
             try:
                 conn=cx_Oracle.connect('NILESH/nilesh@localhost:1521/xe')
                 cursor=conn.cursor()
@@ -484,7 +484,7 @@ def add_data(self):
                     cursor.close()
                 if conn:
                     conn.close()
-def update(self):
+    def update(self):
                 conn=cx_Oracle.connect('NILESH/nilesh@localhost:1521/xe')
                 cursor=conn.cursor()
                 cursor.execute("update LIBRARY_MEMBER_DETAILS set MEMBER=:membertype, PRN_NO=:prnno, FIRSTNAME= :firstname, LASTNAME=:lastname, ADDRESS=:address, CITY=:city,POSTID= :postcode,MOBILE= :mobile, BOOK_ID=:bookid,BOOK_TITLE = :booktitle, AUTHER=:auther, DATEBORROWED=:dateborrowed, DUEDATE=:datedue, DAYS=:days, LATERETUENFINE=:latereturnfine, DATEOVERDUE=:dateoverdue, FINAL_PRICE=:finalprice where ID=:idno",(
@@ -514,7 +514,7 @@ def update(self):
 
                 messagebox.showinfo("Data Updated Sucessful !!!")
 
-def delete(self):
+    def delete(self):
           if self.id_var.get()=="" :
                 messagebox.showerror("Error!! First select the member")
           else:
@@ -530,7 +530,7 @@ def delete(self):
                conn.close()
 
                messagebox.showinfo("Member deleted Successfully !!!")
-def fatch_data(self):
+    def fatch_data(self):
           conn=cx_Oracle.connect('NILESH/nilesh@localhost:1521/xe')
           cursor=conn.cursor()
           cursor.execute("select * from LIBRARY_MEMBER_DETAILS")
@@ -544,7 +544,7 @@ def fatch_data(self):
           conn.close()
 
 
-def get_cursor(self,event=""):
+    def get_cursor(self,event=""):
           cursor_row=self.library_table.focus()
           content=self.library_table.item(cursor_row)
           row=content['values']
@@ -568,7 +568,7 @@ def get_cursor(self,event=""):
           self.dateoverdue_var.set(row[16]),
           self.finalprice_var.set(row[17])
 
-def showData(self):
+    def showData(self):
           self.txtBox.insert(END,"Member Type:\t\t"+self.member_var.get() + "\n")
           self.txtBox.insert(END,"PRN No:\t\t"+self.prn_var.get() + "\n")
           self.txtBox.insert(END,"ID No:\t\t"+self.id_var.get() + "\n")
@@ -589,7 +589,7 @@ def showData(self):
           self.txtBox.insert(END,"FinalPrice:\t\t"+self.finalprice_var.get() + "\n")
     
 
-def reset(self):
+    def reset(self):
           self.member_var.set(""),
           self.prn_var.set(""),
           self.id_var.set(""),
@@ -611,7 +611,7 @@ def reset(self):
           self.txtBox.delete("1.0",END)
 
 
-def iExit(self):
+    def iExit(self):
           iExit=tk.messagebox.askyesno("DO you want to exit")
           if iExit>0:
                 self.root.destroy()
