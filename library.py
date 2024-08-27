@@ -530,7 +530,44 @@ def delete(self):
                conn.close()
 
                messagebox.showinfo("Member deleted Successfully !!!")
+def fatch_data(self):
+          conn=cx_Oracle.connect('NILESH/nilesh@localhost:1521/xe')
+          cursor=conn.cursor()
+          cursor.execute("select * from LIBRARY_MEMBER_DETAILS")
+          rows=cursor.fetchall()
 
+          if len(rows)!=0:
+                self.library_table.delete(*self.library_table.get_children())
+                for i in rows:
+                      self.library_table.insert("",END,values=i)
+                conn.commit()
+          conn.close()
+
+
+def get_cursor(self,event=""):
+          cursor_row=self.library_table.focus()
+          content=self.library_table.item(cursor_row)
+          row=content['values']
+
+          self.member_var.set(row[0]),
+          self.prn_var.set(row[1]),
+          self.id_var.set(row[2]),
+          self.firstname_var.set(row[3]),
+          self.lastname_var.set(row[4]),
+          self.address_var.set(row[5]),
+          self.city_var.set(row[6]),
+          self.postcode_var.set(row[7]),
+          self.mobile_var.set(row[8]),
+          self.bookid_var.set(row[9]),
+          self.booktitle_var.set(row[10]),
+          self.auther_var.set(row[11]),
+          self.dateborrowed_var.set(row[12]),
+          self.datedue_var.set(row[13]),
+          self.daysonbook_var.set(row[14]),
+          self.lateratefine_var.set(row[15]),
+          self.dateoverdue_var.set(row[16]),
+          self.finalprice_var.set(row[17])
+          
 if __name__ == "__main__":
     root=Tk()
     obj=LibraryManagementSystem(root)
